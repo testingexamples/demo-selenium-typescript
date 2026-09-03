@@ -1,0 +1,17 @@
+# Demo Selenium TypeScript
+
+> A beginner walkthrough demonstrating Selenium WebDriver element-locating strategies and form interactions, in TypeScript, against https://testingexamples.github.io.
+
+## Docs
+
+- [README](README.md): Install and run instructions for the Selenium/TypeScript/ChromeDriver demo.
+- [Spec](spec/index.md): Exact scenario specification — target URL, every locator, and every form interaction value.
+- [Citation](CITATION.cff): Citation metadata for this software.
+
+## Source
+
+- [demo.ts](src/demo.ts): The walkthrough script itself.
+
+## Optional
+
+- [AGENTS.md](AGENTS.md): Agent instructions pointer (loaded by CLAUDE.md).

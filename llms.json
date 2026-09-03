@@ -1,0 +1,29 @@
+{
+  "name": "demo-selenium-typescript",
+  "summary": "A beginner walkthrough demonstrating Selenium WebDriver element-locating strategies and form interactions, in TypeScript, against https://testingexamples.github.io.",
+  "description": "Demonstrates locating elements by id, name, class name, link text, and XPath, then filling a text input, checking a checkbox, checking a radio button, and selecting a dropdown option, using Selenium WebDriver with ChromeDriver, Node.js, and TypeScript.",
+  "repository": "https://github.com/testingexamples/demo-selenium-typescript/",
+  "license": "GPL-2.0-or-later",
+  "sections": [
+    {
+      "title": "Docs",
+      "links": [
+        { "title": "README", "url": "README.md", "description": "Install and run instructions for the Selenium/TypeScript/ChromeDriver demo." },
+        { "title": "Spec", "url": "spec/index.md", "description": "Exact scenario specification — target URL, every locator, and every form interaction value." },
+        { "title": "Citation", "url": "CITATION.cff", "description": "Citation metadata for this software." }
+      ]
+    },
+    {
+      "title": "Source",
+      "links": [
+        { "title": "demo.ts", "url": "src/demo.ts", "description": "The walkthrough script itself." }
+      ]
+    },
+    {
+      "title": "Optional",
+      "links": [
+        { "title": "AGENTS.md", "url": "AGENTS.md", "description": "Agent instructions pointer (loaded by CLAUDE.md)." }
+      ]
+    }
+  ]
+}
