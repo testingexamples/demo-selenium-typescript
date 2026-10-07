@@ -3,7 +3,7 @@
 ## Summary
 
 This spec describes the exact Selenium WebDriver walkthrough that
-`src/demo.ts` performs against https://testingexamples.github.io.
+`src/demo.ts` performs against https://testingexamples.github.io/en-001/practice/.
 
 ## Scope
 
@@ -20,7 +20,7 @@ ChromeDriver, or troubleshooting driver/browser version mismatches — see
 * This is a walkthrough script, not a test suite. It demonstrates locator
   strategies and form interactions by printing HTML with `console.log`; it
   does not make assertions.
-* The script targets exactly one page: https://testingexamples.github.io.
+* The script targets exactly one page: https://testingexamples.github.io/en-001/practice/.
 * `src/demo.ts` is a straight TypeScript port of `demo-selenium-javascript`'s
   `src/demo.js`, with explicit types (`WebDriver`, `WebElement`, `Select`,
   etc.) added throughout. The scenario, locators, and values are identical
@@ -28,7 +28,7 @@ ChromeDriver, or troubleshooting driver/browser version mismatches — see
 
 ## Detail
 
-Target URL: `https://testingexamples.github.io`
+Target URL: `https://testingexamples.github.io/en-001/practice/`
 
 Locators (verbatim from `src/demo.ts`):
 
@@ -67,4 +67,4 @@ every locator resolves — each `findElement` call succeeds and each
 
 ## Sources
 
-* <https://testingexamples.github.io>
+* <https://testingexamples.github.io/en-001/practice/>

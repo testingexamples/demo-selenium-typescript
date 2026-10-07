@@ -1,6 +1,6 @@
 {
   "name": "demo-selenium-typescript",
-  "summary": "A beginner walkthrough demonstrating Selenium WebDriver element-locating strategies and form interactions, in TypeScript, against https://testingexamples.github.io.",
+  "summary": "A beginner walkthrough demonstrating Selenium WebDriver element-locating strategies and form interactions, in TypeScript, against https://testingexamples.github.io/en-001/practice/.",
   "description": "Demonstrates locating elements by id, name, class name, link text, and XPath, then filling a text input, checking a checkbox, checking a radio button, and selecting a dropdown option, using Selenium WebDriver with ChromeDriver, Node.js, and TypeScript.",
   "repository": "https://github.com/testingexamples/demo-selenium-typescript/",
   "license": "MIT OR Apache-2.0 OR GPL-2.0-only OR GPL-3.0-only OR BSD-3-Clause",

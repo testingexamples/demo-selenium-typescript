@@ -108,7 +108,7 @@ node ./src/demo.js
 
 The script will do three things:
 
-1. Launch your local Chrome web browser to view the free open source testing examples web page <https://testingexamples.github.io>.
+1. Launch your local Chrome web browser to view the free open source testing examples web page <https://testingexamples.github.io/en-001/practice/>.
 
 2. Interact with the web page in various ways, such as finding elements, clicking on elements, filling in form inputs, etc.
 

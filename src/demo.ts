@@ -45,7 +45,7 @@ async function demo(): Promise<void> {
 
     try {
         // Navigate to a website
-        await driver.get("https://testingexamples.github.io");
+        await driver.get("https://testingexamples.github.io/en-001/practice/");
 
         ///
         // Find elements in various ways.

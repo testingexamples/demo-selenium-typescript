@@ -1,6 +1,6 @@
 ---
 name: demo-selenium-typescript
-description: Explains and adapts the demo-selenium-typescript Selenium WebDriver walkthrough (locating elements by id/name/class/link-text/xpath, filling a text input, checking a checkbox/radio, selecting a dropdown option) against https://testingexamples.github.io; invoke when asked to run, explain, extend, or port this demo, or to adapt it to a different site or Selenium version.
+description: Explains and adapts the demo-selenium-typescript Selenium WebDriver walkthrough (locating elements by id/name/class/link-text/xpath, filling a text input, checking a checkbox/radio, selecting a dropdown option) against https://testingexamples.github.io/en-001/practice/; invoke when asked to run, explain, extend, or port this demo, or to adapt it to a different site or Selenium version.
 ---
 
 This skill covers the `demo-selenium-typescript` repo: a small TypeScript
@@ -8,7 +8,7 @@ script (`src/demo.ts`) that teaches Selenium WebDriver's locator strategies
 (`By.id`, `By.name`, `By.className`, `By.linkText`, `By.xpath`) and basic
 form interactions (filling a text input, checking a checkbox and radio,
 selecting a dropdown option via `Select`) against the public demo site
-https://testingexamples.github.io. This repo is a generic locator
+https://testingexamples.github.io/en-001/practice/. This repo is a generic locator
 walkthrough, not NHS-Wales-specific and not Google-specific. It is a
 straight TypeScript port of the sibling repo `demo-selenium-javascript`,
 typed using `@types/selenium-webdriver`, with the same tsconfig

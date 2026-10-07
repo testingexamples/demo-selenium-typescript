@@ -1,6 +1,6 @@
 # Demo Selenium TypeScript
 
-> A beginner walkthrough demonstrating Selenium WebDriver element-locating strategies and form interactions, in TypeScript, against https://testingexamples.github.io.
+> A beginner walkthrough demonstrating Selenium WebDriver element-locating strategies and form interactions, in TypeScript, against https://testingexamples.github.io/en-001/practice/.
 
 ## Docs
 
