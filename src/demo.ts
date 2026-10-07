@@ -16,7 +16,7 @@
 ///
 
 // Import Selenium Webdriver parts, with their types.
-import { Browser, Builder, By, Key, Select, WebDriver, WebElement } from 'selenium-webdriver';
+import { Browser, Builder, By, Key, Select, WebDriver, WebElement, error } from 'selenium-webdriver';
 // Note: `Key` is imported (unused below) to mirror demo-selenium-javascript's
 // import list and to show where you'd import it from for typed key-press
 // interactions such as `Key.RETURN` — see the Google Search/Maps demo repos
@@ -34,6 +34,29 @@ options.setUserPreferences({ "profile.default_content_setting_values.cookies": 2
 // The tsconfig.json `esModuleInterop` option helps with that.
 import { strict as assert } from 'assert';
 assert(true);
+
+// Locate, scroll into view, and act on an element, all inside one explicit
+// wait. The page re-renders while it hydrates, which can make a located
+// element go stale, and it scrolls smoothly (so scroll with behavior 'instant',
+// or a click lands mid-animation). Retrying the whole step until it succeeds
+// handles both.
+async function actOn(driver: WebDriver, by: By, action: (element: WebElement) => Promise<void>): Promise<void> {
+    await driver.wait(async () => {
+        try {
+            const element = await driver.findElement(by);
+            await driver.executeScript("arguments[0].scrollIntoView({block: 'center', behavior: 'instant'})", element);
+            console.log(await element.getAttribute("outerHTML"));
+            await action(element);
+            return true;
+        } catch (err) {
+            if (err instanceof error.StaleElementReferenceError ||
+                err instanceof error.ElementClickInterceptedError) {
+                return false;
+            }
+            throw err;
+        }
+    }, 10000);
+}
 
 async function demo(): Promise<void> {
 
@@ -116,9 +139,10 @@ async function demo(): Promise<void> {
         //
         //     <input type="text" id="text-example-1">
         //
-        const text: WebElement = await driver.findElement(By.id("text-example-1-id"));
-        console.log(await text.getAttribute("outerHTML"));
-        await text.sendKeys("hello");
+        await actOn(driver, By.id("text-example-1-id"), async (text) => {
+            await text.clear();
+            await text.sendKeys("hello");
+        });
 
         // Click a checkbox input.
         //
@@ -126,9 +150,9 @@ async function demo(): Promise<void> {
         //
         //     <input type="checkbox" id="checkbox-example-1-id">
         //
-        const checkbox: WebElement = await driver.findElement(By.id("checkbox-example-1-id"));
-        console.log(await checkbox.getAttribute("outerHTML"));
-        await checkbox.click();
+        await actOn(driver, By.id("checkbox-example-1-id"), async (checkbox) => {
+            await checkbox.click();
+        });
 
         // Click a radio input.
         //
@@ -136,9 +160,9 @@ async function demo(): Promise<void> {
         //
         //     <input type="radio" id="radio-example-1-id-option-1-id">
         //
-        const radio: WebElement = await driver.findElement(By.id("radio-example-1-option-1-id"));
-        console.log(await radio.getAttribute("outerHTML"));
-        await radio.click();
+        await actOn(driver, By.id("radio-example-1-option-1-id"), async (radio) => {
+            await radio.click();
+        });
 
         // Choose a select input option.
         //
@@ -150,12 +174,12 @@ async function demo(): Promise<void> {
         //       <option>charlie</option>
         //     </select>
         //
-        const selectElement: WebElement = await driver.findElement(By.id("select-example-1-id"));
-        console.log(await selectElement.getAttribute("outerHTML"));
-        const select: Select = new Select(selectElement);
-        await select.selectByIndex(0);
-        const option: WebElement = await select.getFirstSelectedOption();
-        console.log(await option.getAttribute("outerHTML"));
+        await actOn(driver, By.id("select-example-1-id"), async (selectElement) => {
+            const select: Select = new Select(selectElement);
+            await select.selectByIndex(0);
+            const option: WebElement = await select.getFirstSelectedOption();
+            console.log(await option.getAttribute("outerHTML"));
+        });
 
     } catch (err: unknown) {
         // Type guard for error handling
